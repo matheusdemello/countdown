@@ -15,6 +15,11 @@
       padding: 20px;
       margin: 0;
       overflow-x: hidden;
+      cursor: url('heart-cursor.png'), auto;
+    }
+
+    body:active {
+      cursor: url('heart-cursor-drag.png'), auto;
     }
 
     .container {
@@ -24,6 +29,7 @@
       padding: 20px;
       border-radius: 20px;
       border: 5px dashed #ff9a9e;
+      box-sizing: border-box;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
@@ -55,7 +61,7 @@
     .image-box {
       width: 100%;
       max-width: 600px;
-      height: 500px;
+      height: 300px;
       margin: 20px auto;
       overflow: hidden;
       border-radius: 20px;
@@ -73,8 +79,10 @@
       padding-bottom: 56.25%; /* 16:9 aspect ratio */
       height: 0;
       overflow: hidden;
-      max-width: 100%;
+      width: 100%;
+      max-width: 600px;
       margin: 20px auto;
+      box-sizing: border-box;
     }
 
     .video-container iframe {
@@ -134,6 +142,30 @@
       color: #ff6f91;
       margin-top: 20px;
     }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+
+      .video-container {
+        max-width: 100%;
+        margin: 10px auto;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      #countdown {
+        font-size: 1.5rem;
+      }
+
+      .play-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -159,7 +191,7 @@
 
     <button class="play-button" onclick="playWithSound()">Play Video with Sound</button>
 
-    <p class="quote">"Every day brings us closer to forever. InshaAllah"</p>
+    <p class="quote">"Every day brings us closer to forever."</p>
 
     <footer>
       © 2025 Matheus and Nada.
