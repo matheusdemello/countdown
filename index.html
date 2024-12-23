@@ -67,6 +67,14 @@
         .play-button:hover {
             background-color: #d00;
         }
+
+        /* Hide the iframe */
+        #background-music {
+            width: 0;
+            height: 0;
+            border: none;
+            visibility: hidden;
+        }
     </style>
 </head>
 <body>
@@ -79,12 +87,15 @@
         </div>
 
         <!-- Play Button -->
-        <button class="play-button" onclick="playMusic()">Background Music</button>
+        <button class="play-button" onclick="playMusic()">Play Background Music</button>
 
         <footer>
             © 2025 Matheus and Nada.
         </footer>
     </div>
+
+    <!-- Hidden YouTube iframe for background audio -->
+    <div id="background-music"></div>
 
     <!-- YouTube Player API Script -->
     <script src="https://www.youtube.com/iframe_api"></script>
@@ -94,8 +105,6 @@
         // Load the YouTube Player
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('background-music', {
-                height: '0',
-                width: '0',
                 videoId: '3mtu-W2p5Ic', // Replace with your video ID
                 playerVars: {
                     autoplay: 0,
